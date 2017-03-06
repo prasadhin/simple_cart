@@ -1,10 +1,13 @@
 package org.onlineCart;
 import java.util.Iterator;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.onlineCart.bean.Item;
 import org.onlineCart.purchase.Purchase;
 
-
 public class PurchaseTest {
+	private static final Logger log = LogManager.getLogger(PurchaseTest.class);
 
 	public static void main(String[] args) {
 		Purchase i = new Purchase("Prasad");		
@@ -14,15 +17,15 @@ public class PurchaseTest {
 		i.addItem(new Item("i103","Pineapple",3,4));
 		i.addItem(new Item("i107","Jackfruit",1,10));
 
-		System.out.print ("Order Placed By: "+i.uid);
-		System.out.println("\nNo. of Items : "+i.itemCount());
+		log.debug ("Order Placed By: "+i.uid);
+		log.debug("No. of Items : "+i.itemCount());
 		
 		
 		
-		System.out.println ("Cart Total : £"+i.getCartPrice());   
+		log.debug ("Cart Total : £"+i.getCartPrice());   
 		final Iterator<Item> it = i.getCartDetails().iterator();
 		while(it.hasNext()){		
-			System.out.println (it.next());
+			log.debug (it.next());
 		}
 	
 		

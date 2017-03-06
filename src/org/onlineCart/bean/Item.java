@@ -53,17 +53,17 @@ public class Item implements java.io.Serializable {
 		buffer.append(sep);
 		buffer.append("----- Item Detail ----- ");
 		buffer.append(sep);
-    buffer.append("\tiid = ");
+    buffer.append("\tItem id = ");
 		buffer.append(iid);
 		buffer.append(sep);
-		buffer.append("\tiname = ");
+		buffer.append("\tItem Name = ");
 		buffer.append(iname);
 		buffer.append(sep);
 		buffer.append("\tqty = ");
 		buffer.append(qty);
 		buffer.append(sep);
 		buffer.append("\tprice = ");
-		buffer.append(price);
+		buffer.append("£"+price);
 		buffer.append(sep);
 		return buffer.toString();
 	}//toString
